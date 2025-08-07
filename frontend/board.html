@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javna Oglasna Ploča</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="board.css">
+    <script src="https://cdn.jsdelivr.net/npm/snarkjs@0.7.0/build/snarkjs.min.js"></script>
+</head>
+
+<body>
+    <div class="container board-container">
+        <h1>Javna Oglasna Ploča Glasova</h1>
+        <p>Ovdje su javno zabilježeni svi glasovi. Svaki red predstavlja jedan valjano predan glas. Možete pretraživati
+            po kodu za praćenje i neovisno verificirati svaki dokaz.</p>
+
+        <div class="board-controls">
+            <input type="text" id="search-box" placeholder="Pretraži po kodu za praćenje...">
+            <button id="refresh-btn">Osvježi</button>
+        </div>
+
+        <div class="board-summary">
+            Ukupno valjanih glasova: <span id="vote-count">0</span>
+        </div>
+
+        <div id="ballot-list" class="ballot-list">
+        </div>
+
+        <a href="/" class="link-btn">Natrag na glasanje</a>
+    </div>
+
+    <script src="board.js"></script>
+</body>
+
+</html>

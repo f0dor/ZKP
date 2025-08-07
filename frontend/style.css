@@ -1,0 +1,110 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 1rem;
+}
+
+.container {
+    background-color: #fff;
+    padding: 2rem 3rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+h1,
+h2 {
+    color: #005f73;
+}
+
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+.options {
+    display: flex;
+    justify-content: space-around;
+    margin: 1.5rem 0;
+}
+
+label {
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+button,
+.link-btn {
+    background-color: #0a9396;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0.5rem;
+}
+
+button:hover,
+.link-btn:hover {
+    background-color: #005f73;
+}
+
+#audit-btn {
+    background-color: #ee9b00;
+}
+
+#audit-btn:hover {
+    background-color: #ca6702;
+}
+
+.actions {
+    margin-top: 1.5rem;
+}
+
+.receipt {
+    background-color: #e9ecef;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+    word-break: break-all;
+    font-family: monospace;
+}
+
+.receipt.final {
+    border: 2px solid #0a9396;
+}
+
+#audit-details {
+    text-align: left;
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+}
+
+#status {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

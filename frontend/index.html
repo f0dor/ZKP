@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E2E-V Sigurno Glasovanje</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/snarkjs@0.7.0/build/snarkjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/circomlibjs@0.1.7/dist/circomlibjs.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-sha256@0.11.0/src/sha256.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>E2E Provjerljivo Glasovanje</h1>
+
+        <div id="step0" class="step active">
+            <h2>Korak 0: Identifikacija</h2>
+            <p>U stvarnom sustavu, prijavili biste se sigurno. Ovdje, za demo, odaberite jednog od preddefiniranih
+                glasača kako biste dobili njegovu jedinstvenu tajnu.</p>
+            <form id="login-form">
+                <select id="voter-secret-select">
+                </select>
+                <button type="submit">Ulogiraj se</button>
+            </form>
+        </div>
+
+        <div id="step1" class="step">
+            <h2>Korak 1: Odaberi kandidata</h2>
+            <p>Prijavljeni ste kao <strong id="voter-display"></strong>.</p>
+            <form id="vote-form">
+                <div class="options">
+                    <label><input type="radio" name="candidate" value="1" checked> Kandidat A</label>
+                    <label><input type="radio" name="candidate" value="2"> Kandidat B</label>
+                    <label><input type="radio" name="candidate" value="3"> Kandidat C</label>
+                </div>
+                <button type="submit">Pripremi glas</button>
+            </form>
+        </div>
+
+        <div id="step2" class="step">
+            <h2>Korak 2: Provjeri i pošalji</h2>
+            <p>Tvoj glas je pripremljen i kriptiran. Sada možeš provjeriti je li aplikacija ispravno pripremila tvoj
+                glas (audit) ili ga možeš poslati.</p>
+            <div class="receipt">
+                <strong>Kod za praćenje listića:</strong>
+                <code id="tracker-code"></code>
+            </div>
+            <div class="actions">
+                <button id="audit-btn">Auditiraj ovaj glas</button>
+                <button id="send-btn">Pošalji ovaj glas</button>
+            </div>
+            <div id="audit-details" class="step"></div>
+        </div>
+
+        <div id="step3" class="step">
+            <h2>Korak 3: Uspješno glasovanje!</h2>
+            <p>Tvoj glas je zabilježen. Sačuvaj svoj kod za praćenje kako bi kasnije mogao provjeriti je li tvoj glas na
+                javnoj oglasnoj ploči.</p>
+            <div class="receipt final">
+                <strong>Tvoj kod za praćenje:</strong>
+                <code id="final-tracker-code"></code>
+            </div>
+            <button id="reset-btn">Glasaj ponovno (Demo)</button>
+            <a href="board.html" target="_blank" class="link-btn">Vidi javnu oglasnu ploču</a>
+        </div>
+
+        <div id="status">
+            <p>Molimo, prijavite se.</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

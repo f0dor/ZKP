@@ -1,0 +1,77 @@
+.board-container {
+    max-width: 900px;
+}
+
+.board-controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+#search-box {
+    flex-grow: 1;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.board-summary {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+.ballot-list {
+    text-align: left;
+    max-height: 60vh;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+
+.ballot-item {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    align-items: center;
+}
+
+.ballot-item:last-child {
+    border-bottom: none;
+}
+
+.ballot-info strong {
+    color: #005f73;
+    font-size: 0.9rem;
+}
+
+.ballot-info code {
+    display: block;
+    font-size: 0.8rem;
+    word-break: break-all;
+    background-color: #e9ecef;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    margin-top: 0.3rem;
+}
+
+.ballot-actions button {
+    padding: 0.5rem 1rem;
+}
+
+.verification-status {
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+.verification-status.valid {
+    color: #28a745;
+}
+
+.verification-status.invalid {
+    color: #dc3545;
+}
