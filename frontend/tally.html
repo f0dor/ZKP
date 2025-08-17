@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javno Zbrajanje Glasova</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="board.css">
+    <script src="https://cdn.jsdelivr.net/npm/snarkjs@0.7.0/build/snarkjs.min.js"></script>
+</head>
+
+<body>
+    <div class="container board-container">
+        <h1>Javno Provjerljivo Zbrajanje</h1>
+        <p>Ovaj proces zbraja sve glasove s oglasne ploče i generira ZKP dokaz da je zbroj točan. Svatko može pokrenuti
+            ovaj proces i uvjeriti se u ispravnost rezultata.</p>
+
+        <div class="actions">
+            <button id="start-tally-btn">Započni javno zbrajanje</button>
+        </div>
+
+        <div id="tally-results" style="display:none;">
+            <h2>Rezultati izbora:</h2>
+            <div id="final-tally-display" class="receipt final"></div>
+            <h3>Status verifikacije zbroja:</h3>
+            <div id="tally-status" class="status"></div>
+        </div>
+        <button id="reset-voting-btn" class="link-btn" style="background-color:#dc3545; margin-top: 1rem;">Resetiraj
+            cijelo glasovanje</button>
+        <a href="/" class="link-btn">Natrag na glasanje</a>
+    </div>
+    <script src="tally.js"></script>
+</body>
+
+</html>

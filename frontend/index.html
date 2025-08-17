@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E2E-V Sigurno Glasovanje</title>
     <link rel="stylesheet" href="style.css">
+
     <script src="https://cdn.jsdelivr.net/npm/snarkjs@0.7.0/build/snarkjs.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/circomlibjs@0.1.7/dist/circomlibjs.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-sha256@0.11.0/src/sha256.min.js"></script>
 </head>
 
@@ -29,6 +29,12 @@
         <div id="step1" class="step">
             <h2>Korak 1: Odaberi kandidata</h2>
             <p>Prijavljeni ste kao <strong id="voter-display"></strong>.</p>
+            <div class="receipt" style="text-align: left; margin-bottom: 1.5rem;">
+                <strong>Vaš anonimni poništivač (Nullifier):</strong>
+                <code id="nullifier-display">Izračunavam...</code>
+                <small style="display: block; margin-top: 0.5rem;">Ovaj broj dokazuje da ste vi glasali, ali ne otkriva
+                    vaš identitet. Bit će javno vidljiv na oglasnoj ploči.</small>
+            </div>
             <form id="vote-form">
                 <div class="options">
                     <label><input type="radio" name="candidate" value="1" checked> Kandidat A</label>
@@ -63,7 +69,7 @@
                 <code id="final-tracker-code"></code>
             </div>
             <button id="reset-btn">Glasaj ponovno (Demo)</button>
-            <a href="board.html" target="_blank" class="link-btn">Vidi javnu oglasnu ploču</a>
+            <a href="board.html" class="link-btn">Vidi javnu oglasnu ploču</a>
         </div>
 
         <div id="status">
