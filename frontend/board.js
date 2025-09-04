@@ -95,7 +95,6 @@ document.addEventListener("DOMContentLoaded", () => {
           publicSignals: ballot.publicSignals,
           proof: ballot.proof,
         };
-        // Koristimo alert za jednostavan prikaz formatiranog JSON-a
         alert(JSON.stringify(dataToShow, null, 2));
       };
 
@@ -115,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const response = await fetch("http://localhost:3000/bulletin-board");
       if (!response.ok) throw new Error("Network response was not ok");
       allBallots = await response.json();
-      searchBox.value = ""; // Očisti pretragu
+      searchBox.value = "";
       renderBallots(allBallots);
     } catch (err) {
       console.error("Failed to fetch bulletin board data:", err);
